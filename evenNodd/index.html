@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="num"></p>
+    <input type="text" id="NumberStore" />
+    <script>
+      const Number = document.getElementById("num");
+      const Store = document.getElementById("NumberStore");
+
+      Store.addEventListener("input", () => {
+        // const value = parseInt(Store.value);
+        // if (!isNaN(value)) {
+          if (Store.value % 2 !== 0) {
+            Number.textContent = "tha no is odd";
+          } else {
+            Number.textContent = "tha no is even";
+          }
+    //     } else {
+    //       Namber.textContent = "Enter your no ";
+    //     }
+      });
+
+    </script>
+  </body>
+</html>
+
+<!-- parseInt kya karta hai?
+parseInt() ek JavaScript function hai jo string ko number mein convert karta hai. Agar aap ek string (jaise "123") ko parseInt mein daalte hain, toh woh string ko integer mein convert kar dega.
+
+Lekin ek important baat hai:
+Agar string ka pehla hissa ek valid number ho, toh parseInt us number ko extract kar lega. Agar string mein koi aur cheez ho, toh woh us number ke baad ke part ko ignore kar dega.
+
+Example:
+
+javascript
+Copy
+Edit
+parseInt("123abc");  // Result: 123
+Yaha, 123abc ko parseInt ne sirf 123 ko liya aur baaki part ko ignore kar diya.
+ -->
+<!-- new learning -->
