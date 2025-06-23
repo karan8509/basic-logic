@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="bigNumber"></p>
+    <script>
+      const array = ["13", "45", "34", "99", "33", ];
+      const numberResult = document.getElementById("bigNumber");
+      let largest = array[0];
+
+      //  array.forEach(array => {
+      //   numberResult.textContent = `Current no ${array.length  } `
+      //  });
+
+      // array.map((arr)=>{
+      //      largest <  array
+      //     })
+      //     console.log(largest)
+
+      // const  max = Math.max(...array.map(Number))
+      // console.log(max)
+
+      for (let i = 0; i < array.length; i++) {
+        // console.log(i)
+        if (array[i] > largest) {
+         largest = array[i]
+        }
+      }
+
+      console.log(largest);
+    </script>
+  </body>
+</html>
