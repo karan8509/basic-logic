@@ -9,6 +9,7 @@ function App() {
        <Routes>
         <Route path="/" element={<HomePages />} />
         <Route path="/admin" element={<AdminPages />} />
+        <Route path="/category/:category" element={<CategoryPages />} />
       </Routes>
     </>
   );
