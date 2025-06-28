@@ -4,9 +4,10 @@ const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
 const Connection = require("./db");
+const Cloudinary = require("./canfig");
 app.use(cors());
 
-app.use(express.json({}));
+app.use(express.json({ limit: "10mb" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT || 9000;
@@ -28,7 +29,8 @@ app.get("/api/getProduct", async (req, res) => {
 
 app.get("/api/categoryproduct", async (req, res) => {
   try {
-    const product = await Product.find({});
+    const { category } = req.params;
+    const product = await Product.find({ category });
     res.json(product);
   } catch (error) {
     console.log("Error in GetProduct Route");
@@ -36,15 +38,21 @@ app.get("/api/categoryproduct", async (req, res) => {
   }
 });
 
-
 app.post("/api/create-product", async (req, res) => {
   try {
     const { productName, image, category } = req.body;
     console.log(productName, image, category);
 
+    let cloudinaryImages = null;
+    if (image) {
+      cloudinaryImages = await Cloudinary.uploader.upload(image, {
+        folder: "products",
+      });
+    }
+
     const product = await Product.create({
       productName,
-      image,
+      image : cloudinaryImages?.secure_url ||  "" ,
       category,
     });
     res.json({

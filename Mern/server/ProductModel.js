@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { type } = require("os");
 
 const ProductSchema = new mongoose.Schema({
   productName: {
@@ -16,6 +15,6 @@ const ProductSchema = new mongoose.Schema({
   },
 });
 
-const Product = mongoose.model("Product", ProductSchema);
+const Product = mongoose.model("LocalProduct", ProductSchema);
 
 module.exports = Product;

@@ -3,7 +3,7 @@ const mongosse = require("mongoose");
 const Connection = async () => {
   try {
     await mongosse.connect(
-      "mongodb+srv://chat-app:S7oDMzWfOqkYcOzX@cluster1.hfwjp.mongodb.net"
+      "mongodb+srv://chat-app:Jh6kJyQE5AAYkTEC@cluster1.hfwjp.mongodb.net/"
     );
     console.log("Connection on");
   } catch (error) {

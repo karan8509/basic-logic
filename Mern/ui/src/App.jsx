@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePages from "./pages/homePages";
 import Navbar from "./component/Navbar";
 import AdminPages from "./pages/AdminPages";
+import CategoryPages from "./pages/categoryPages";
 function App() {
   return (
     <>
